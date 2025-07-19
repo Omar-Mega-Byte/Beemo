@@ -1,0 +1,86 @@
+{
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.project.sourcePaths": [
+    "trader-service/src/main/java/com/trader"
+  ],
+  "java.configuration.updateBuildConfiguration": "automatic",
+  // "keyboard.dispatch": "keyCode", // Resolver o problema do ctrl+/ no fedora
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.fontFamily": "Fira Code, JetBrains Mono, Cascadia Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": "vira-icons-palenight",
+  "editor.cursorStyle": "block",
+  "editor.tabSize": 4,
+  "editor.detectIndentation": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+
+  // cursor color
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#abb2bf",
+    "terminalCursor.foreground": "#abb2bf"
+  },
+
+  "editor.codeLens": true,
+  "files.autoSave": "onFocusChange",
+  "terminal.integrated.fontFamily": "Fira Code, JetBrains Mono, Cascadia Code, monospace",
+  "debug.console.fontFamily": "JetBrains Mono",
+  "terminal.integrated.localEchoStyle": "dim",
+  "editor.lineHeight": 24,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.enableSmartCommit": true,
+  "editor.formatOnType": true,
+  "window.menuBarVisibility": "compact",
+  "git.confirmSync": false,
+  "todo-tree.highlights.customHighlight": {
+    "BUG": {
+      "icon": "bug"
+    },
+    "HACK": {
+      "icon": "tools"
+    },
+    "FIXME": {
+      "icon": "flame"
+    },
+    "XXX": {
+      "icon": "x"
+    },
+    "[ ]": {
+      "icon": "issue-draft"
+    },
+    "[x]": {
+      "icon": "issue-closed"
+    }
+  },
+  "todo-tree.highlights.enabled": false,
+  "terminal.integrated.fontSize": 15,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "workbench.startupEditor": "none",
+  "debug.onTaskErrors": "debugAnyway",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.bracketPairColorization.independentColorPool": true,
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "zenMode.fullScreen": true,
+  "zenMode.hideStatusBar": false,
+  "zenMode.hideActivityBar": true,
+  "editor.indentSize": "tabSize",
+  "workbench.preferredHighContrastLightColorTheme": "Default Dark Modern",
+  "workbench.preferredLightColorTheme": "Default Dark Modern",
+  "window.titleBarStyle": "custom",
+  "editor.fontSize": 16,
+  "editor.fontWeight": "500",
+  "workbench.sideBar.location": "left",
+  "workbench.editor.tabCloseButton": "right",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.statusBar.visible": true,
+  "editor.insertSpaces": false,
+  "vscode_custom_css.imports": [
+    "file:///C:/Users/d_tol/Desktop/Beemo/custom-ui-font.css"
+  ],
+  "vscode_custom_css.policy": true,
+  "workbench.editor.tabActionLocation": "right",
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable"
+}

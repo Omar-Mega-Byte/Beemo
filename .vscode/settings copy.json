@@ -1,0 +1,10 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.project.sourcePaths": [
+        "product-service/src/main/java/com/Ecommerce",
+        "payment-service/src/main/java/com",
+        "payment-service/src",
+        "payment-service"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
+}
