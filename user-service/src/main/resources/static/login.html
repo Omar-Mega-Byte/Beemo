@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beemo - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(120deg, #fffbe6 0%, #ffe066 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .beemo-login-container {
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(255, 193, 7, 0.13), 0 1.5px 8px 0 rgba(0,0,0,0.04);
+            padding: 2.2rem 2.5rem 2.2rem 2.5rem;
+            min-width: 420px;
+            max-width: 600px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .beemo-logo {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.2rem;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px 0 rgba(255, 193, 7, 0.13);
+            background: #fffbe6;
+            object-fit: cover;
+        }
+        .beemo-title {
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: #b8860b;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1.2px;
+            text-align: left;
+            width: 100%;
+        }
+        .beemo-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+        .beemo-input-group {
+            position: relative;
+            width: 100%;
+        }
+        .beemo-input {
+            width: 100%;
+            padding: 0.9rem 2.7rem 0.9rem 1.1rem;
+            border: 1.5px solid #ffe066;
+            border-radius: 14px;
+            font-size: 1.13rem;
+            background: #fffde7;
+            color: #7c4a03;
+            transition: border 0.2s, box-shadow 0.2s;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+        .beemo-input:focus {
+            border: 1.5px solid #b8860b;
+            outline: none;
+            box-shadow: 0 2px 8px 0 rgba(255, 193, 7, 0.10);
+            background: #fff9c4;
+        }
+        .beemo-input::placeholder {
+            color: #b8860b;
+            opacity: 0.8;
+        }
+        .beemo-password-toggle {
+            position: relative;
+            width: 100%;
+        }
+        .beemo-toggle-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #b8860b;
+            font-size: 1.1rem;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            height: 28px;
+        }
+        .beemo-toggle-btn svg {
+            width: 22px;
+            height: 22px;
+        }
+        .beemo-btn {
+            padding: 0.9rem 1.1rem;
+            background: linear-gradient(90deg, #ffe066 60%, #ffd43b 100%);
+            color: #7c4a03;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.13rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px 0 rgba(255, 193, 7, 0.13);
+            transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+            margin-top: 0.2rem;
+        }
+        .beemo-btn:hover {
+            background: linear-gradient(90deg, #ffd43b 60%, #ffe066 100%);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 4px 16px 0 rgba(255, 193, 7, 0.22);
+        }
+        .beemo-switch-link {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 1rem;
+            color: #7c4a03;
+        }
+        .beemo-switch-link a {
+            color: #b8860b;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 0.3rem;
+            transition: color 0.2s;
+        }
+        .beemo-switch-link a:hover {
+            color: #ffd43b;
+        }
+        .beemo-result {
+            margin-top: 0.7rem;
+            min-height: 1.2rem;
+            color: #e53e3e;
+            font-size: 1rem;
+            text-align: center;
+        }
+        @media (max-width: 700px) {
+            .beemo-login-container { min-width: 98vw; max-width: 99vw; padding: 1.1rem 0.3rem; }
+            .beemo-title { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="beemo-login-container">
+        <img class="beemo-logo" src="https://raw.githubusercontent.com/riotgames/leagueskin-preview/main/teemo_beemo.png" alt="Beemo Logo" onerror="this.style.display='none'">
+        <div class="beemo-title">Sign In to Beemo</div>
+        <form id="loginForm" class="beemo-form">
+            <div class="beemo-input-group">
+                <input class="beemo-input" type="text" name="username" placeholder="Username" required autocomplete="username">
+            </div>
+            <div class="beemo-input-group beemo-password-toggle">
+                <input class="beemo-input" type="password" id="password" name="password" placeholder="Password" required autocomplete="current-password">
+                <button class="beemo-toggle-btn" type="button" tabindex="-1" aria-label="Show password" onclick="togglePassword()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="8" ry="5"/><circle cx="12" cy="12" r="2.5"/></svg>
+                </button>
+            </div>
+            <button class="beemo-btn" type="submit">Login</button>
+            <div id="loginResult" class="beemo-result"></div>
+        </form>
+        <div class="beemo-switch-link">
+            Don't have an account?
+            <a href="/users/register.html">Register for Beemo</a>
+        </div>
+    </div>
+    <script>
+        function togglePassword() {
+            const pwd = document.getElementById('password');
+            pwd.type = pwd.type === 'password' ? 'text' : 'password';
+        }
+        document.getElementById('loginForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const res = await fetch('/users/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: form.username.value,
+                    password: form.password.value
+                })
+            });
+            let text = await res.text();
+            let data;
+            try {
+                data = JSON.parse(text);
+            } catch {
+                data = text;
+            }
+            document.getElementById('loginResult').innerText = (data.token ? 'Login successful!' : (typeof data === 'string' ? data : res.statusText));
+        };
+    </script>
+</body>
+</html>

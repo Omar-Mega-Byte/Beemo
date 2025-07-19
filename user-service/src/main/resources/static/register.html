@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: #fff;
+            padding: 2.5rem 2rem 2rem 2rem;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            min-width: 340px;
+            max-width: 350px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .form h2 {
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            color: #2d3a4b;
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 0.7rem 1rem;
+            border: 1px solid #cfd8dc;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #f7fafc;
+            transition: border 0.2s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border: 1.5px solid #7f9cf5;
+            outline: none;
+        }
+        button {
+            padding: 0.7rem 1rem;
+            background: linear-gradient(90deg, #7f9cf5, #5e72e4);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #5e72e4, #7f9cf5);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .result {
+            margin-top: 0.5rem;
+            min-height: 1.2rem;
+            color: #e53e3e;
+            font-size: 0.98rem;
+            text-align: center;
+        }
+        .switch-link {
+            margin-top: 1.2rem;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .switch-link a {
+            color: #5e72e4;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 0.3rem;
+            transition: color 0.2s;
+        }
+        .switch-link a:hover {
+            color: #7f9cf5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="registerForm" class="form">
+            <h2>Register</h2>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+            <div id="registerResult" class="result"></div>
+        </form>
+        <div class="switch-link">
+            <span>Already have an account?</span>
+            <a href="/login.html">Login</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('registerForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const res = await fetch('/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: form.username.value,
+                    email: form.email.value,
+                    password: form.password.value
+                })
+            });
+            const data = await res.json().catch(() => ({}));
+            document.getElementById('registerResult').innerText = data.id ? 'Registered!' : (data || res.statusText);
+        };
+    </script>
+</body>
+</html> 
