@@ -1,0 +1,124 @@
+# IDE and Editor files
+.vscode/
+.history/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+*.tmp
+*.log
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Spring Boot
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Application properties (environment specific)
+application-dev.properties
+application-prod.properties
+application-local.properties
+application-secret.properties
+
+# Logs
+logs/
+*.log
+*.log.*
+*.out
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Database
+*.h2.db
+*.db
+*.sqlite
+*.sqlite3
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+*.stackdump
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Security and sensitive files
+*.p12
+*.jks
+*.keystore
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Microservices specific
+# Service discovery
+eureka-server/logs/
+# API Gateway
+api-gateway/logs/
+# Individual service logs
+*/logs/
+*/target/
+*/build/
+
+# Test reports
+**/target/surefire-reports/
+**/target/failsafe-reports/
+**/build/reports/
+
+# JaCoCo
+**/target/jacoco/
+**/*.exec
+
+# SonarQube
+.sonar/
+.scannerwork/
+
+# Node.js (if using frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# JVM crash logs
+hs_err_pid*
