@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.trader.exceptions.BadRequestException;
+import com.trader.exceptions.NotFoundException;
 import com.trader.model.Trader;
 import com.trader.service.TraderService;
 import com.trader.util.JwtUtil;
@@ -85,6 +86,9 @@ public class AuthController {
         
         // Find trader by username
         Trader trader = traderService.findByUsername(username);
+        if (trader == null) {
+            throw new NotFoundException("Trader not found");
+        }
         
         // Check password
         if (!traderService.checkPassword(password, trader.getPassword())) {

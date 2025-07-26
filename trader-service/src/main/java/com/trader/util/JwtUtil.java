@@ -2,17 +2,24 @@ package com.trader.util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 import org.springframework.stereotype.Component;
 
+import javax.crypto.SecretKey;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+/**
+ * JWT Utility class for token generation and validation
+ * 
+ * Updated to use JJWT 0.12.x which is compatible with Java 21
+ * and doesn't rely on deprecated JAXB dependencies.
+ */
 @Component
 public class JwtUtil {
-    private final String SECRET_KEY = "beemo_secret";
+    private final SecretKey SECRET_KEY = Keys.hmacShaKeyFor("beemo_secret_key_that_is_long_enough_for_hmac_sha256".getBytes());
     private final long EXPIRATION_TIME = 1000 * 60 * 60 * 10; // 10 hours
 
     public String extractUsername(String token) {
@@ -29,7 +36,11 @@ public class JwtUtil {
     }
 
     private Claims extractAllClaims(String token) {
-        return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
+        return Jwts.parser()
+                .verifyWith(SECRET_KEY)
+                .build()
+                .parseSignedClaims(token)
+                .getPayload();
     }
 
     private Boolean isTokenExpired(String token) {
@@ -43,11 +54,11 @@ public class JwtUtil {
 
     private String createToken(Map<String, Object> claims, String subject) {
         return Jwts.builder()
-                .setClaims(claims)
-                .setSubject(subject)
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+                .claims(claims)
+                .subject(subject)
+                .issuedAt(new Date(System.currentTimeMillis()))
+                .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+                .signWith(SECRET_KEY)
                 .compact();
     }
 
