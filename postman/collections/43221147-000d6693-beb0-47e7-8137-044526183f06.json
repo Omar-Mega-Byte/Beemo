@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "43221147-000d6693-beb0-47e7-8137-044526183f06",
+		"name": "Beemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TraderService",
+			"item": [
+				{
+					"name": "Save a product",
+					"id": "43221147-4a291868-4654-45ed-9e5b-401e55abea0a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Giza Cola\",\r\n    \"description\": \"An amazing drink\",\r\n    \"price\": 19\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TraderURL}}/products",
+							"host": [
+								"{{TraderURL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a product",
+					"id": "43221147-1eb9e1a6-52e9-4922-bdb8-d8fb3a1884cc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alex Cola\",\r\n    \"description\": \"An amazing drink\",\r\n    \"price\": 19\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TraderURL}}/products/5",
+							"host": [
+								"{{TraderURL}}"
+							],
+							"path": [
+								"products",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products",
+					"id": "43221147-4b95609e-313d-4b7e-9c70-0368e971c9d8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TraderURL}}/products",
+							"host": [
+								"{{TraderURL}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "company",
+									"value": "Giza",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a product",
+					"id": "43221147-5fb1a882-23fc-457c-8d22-8e20c2487dd4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TraderURL}}/products/5",
+							"host": [
+								"{{TraderURL}}"
+							],
+							"path": [
+								"products",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a product",
+					"id": "43221147-b06f1474-95ea-4aad-b15b-d7901355e2ea",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{TraderURL}}/products/3",
+							"host": [
+								"{{TraderURL}}"
+							],
+							"path": [
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "43221147-fca36522-fddf-4058-9238-835306a2a172"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9c94ab53-d72f-44e1-81f8-f1b02302930a",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e963db0a-0b02-4023-ae6f-794ef1023c6b",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
