@@ -20,7 +20,7 @@ public class SecurityConfig {
 			.csrf(csrf -> csrf.disable())
 			.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 			.authorizeHttpRequests(auth -> auth
-				.requestMatchers("/", "/traders/login", "/traders/register", "/login.html", "/register.html", "/static/**", "/css/**", "/js/**").permitAll()
+				.requestMatchers("/","products", "/traders/login", "/traders/register", "/login.html", "/register.html", "/static/**", "/css/**", "/js/**").permitAll()
 				.requestMatchers(org.springframework.http.HttpMethod.POST, "/login", "/register").permitAll()
 				.anyRequest().authenticated()
 			);
