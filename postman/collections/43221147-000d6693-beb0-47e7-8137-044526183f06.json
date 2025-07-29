@@ -163,7 +163,7 @@
 			"name": "UserService",
 			"item": [
 				{
-					"name": "http://localhost:9005/register",
+					"name": "Register a user",
 					"id": "43221147-032951df-f5f4-4aa2-9759-9e3e422833e3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
