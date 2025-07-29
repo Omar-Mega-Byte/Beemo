@@ -4,8 +4,8 @@ info:
   version: 1.0.0
 servers:
   - url: http://{{traderurl}}
-  - url: http://localhost:9005
-  - url: http://localhost:9001
+  - url: http://{{userurl}}
+  - url: http://{{orderurl}}
 components:
   securitySchemes:
     noauthAuth:
