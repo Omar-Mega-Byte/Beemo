@@ -337,12 +337,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9001/orders/user/1",
-							"protocol": "http",
+							"raw": "{{OrderURL}}/orders/user/1",
 							"host": [
-								"localhost"
+								"{{OrderURL}}"
 							],
-							"port": "9001",
 							"path": [
 								"orders",
 								"user",
