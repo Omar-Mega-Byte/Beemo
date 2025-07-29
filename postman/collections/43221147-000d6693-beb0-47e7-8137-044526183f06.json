@@ -279,12 +279,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9005/1/validate",
-							"protocol": "http",
+							"raw": "{{UserURL}}/1/validate",
 							"host": [
-								"localhost"
+								"{{UserURL}}"
 							],
-							"port": "9005",
 							"path": [
 								"1",
 								"validate"
