@@ -163,8 +163,33 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{TraderURL}}/products/6/stock",
+							"host": [
+								"{{TraderURL}}"
+							],
+							"path": [
+								"products",
+								"6",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "company",
+									"value": "Giza",
+									"disabled": true
+								}
+							]
+						}
 					},
 					"response": []
 				}
