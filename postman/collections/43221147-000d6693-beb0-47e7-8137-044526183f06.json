@@ -22,7 +22,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Giza Cola\",\r\n    \"description\": \"An amazing drink\",\r\n    \"price\": 19\r\n}",
+							"raw": "{\r\n    \"name\": \"Cairo Cola\",\r\n    \"description\": \"An amazing drink\",\r\n    \"price\": 19\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -166,7 +166,20 @@
 		},
 		{
 			"name": "OrderService",
-			"item": [],
+			"item": [
+				{
+					"name": "New Request",
+					"id": "43221147-20cf8d48-efe0-4fe1-a74f-9926b4a4cbff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "43221147-15db1e4c-e7c0-417e-bd6f-0736fc20a72d"
 		}
 	],
