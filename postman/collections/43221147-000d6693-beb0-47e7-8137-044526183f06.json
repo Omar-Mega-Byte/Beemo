@@ -304,6 +304,31 @@
 			"name": "OrderService",
 			"item": [
 				{
+					"name": "Gets ordered products for a user",
+					"id": "43221147-247d670f-c4f0-4f62-9089-37e8d6f953c6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/orders/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"orders",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create an order",
 					"id": "43221147-20cf8d48-efe0-4fe1-a74f-9926b4a4cbff",
 					"protocolProfileBehavior": {
@@ -330,31 +355,6 @@
 							"port": "9001",
 							"path": [
 								"orders"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Gets ordered products for a user",
-					"id": "43221147-247d670f-c4f0-4f62-9089-37e8d6f953c6",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:9001/orders/user/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9001",
-							"path": [
-								"orders",
-								"user",
-								"1"
 							]
 						}
 					},
