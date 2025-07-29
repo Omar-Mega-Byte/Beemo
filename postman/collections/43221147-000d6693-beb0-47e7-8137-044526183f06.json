@@ -163,6 +163,11 @@
 			"name": "UserService",
 			"item": [],
 			"id": "43221147-635079f8-d3df-4fb3-8dc2-e330925a16ae"
+		},
+		{
+			"name": "OrderService",
+			"item": [],
+			"id": "43221147-15db1e4c-e7c0-417e-bd6f-0736fc20a72d"
 		}
 	],
 	"event": [
