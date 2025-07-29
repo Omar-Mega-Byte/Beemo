@@ -198,7 +198,7 @@
 					"response": []
 				},
 				{
-					"name": "Register a user Copy",
+					"name": "Login as a user",
 					"id": "43221147-c06f0ea6-9dfc-4b39-9d18-91c8986af9da",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
