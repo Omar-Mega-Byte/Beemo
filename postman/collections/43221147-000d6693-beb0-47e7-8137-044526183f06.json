@@ -9,6 +9,39 @@
 			"name": "TraderService",
 			"item": [
 				{
+					"name": "Save a product",
+					"id": "43221147-4a291868-4654-45ed-9e5b-401e55abea0a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hihi Cola\",\r\n    \"description\": \"An amazing drink\",\r\n    \"price\": 19,\r\n    \"stock\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TraderURL}}/products",
+							"host": [
+								"{{TraderURL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get all products",
 					"id": "43221147-4b95609e-313d-4b7e-9c70-0368e971c9d8",
 					"protocolProfileBehavior": {
@@ -106,39 +139,6 @@
 									"key": "quantity",
 									"value": "1"
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Save a product",
-					"id": "43221147-4a291868-4654-45ed-9e5b-401e55abea0a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Hihi Cola\",\r\n    \"description\": \"An amazing drink\",\r\n    \"price\": 19,\r\n    \"stock\": 10\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{TraderURL}}/products",
-							"host": [
-								"{{TraderURL}}"
-							],
-							"path": [
-								"products"
 							]
 						}
 					},
