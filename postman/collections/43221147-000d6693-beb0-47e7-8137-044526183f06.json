@@ -157,7 +157,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Checks Available products",
 					"id": "43221147-f05f934c-fa8b-431e-980e-fbeeb3e14ba2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
