@@ -27,13 +27,4 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 	 * @return Optional containing the product if found, empty otherwise
 	 */
 	Optional<Product> findByName(String name);
-	
-	/**
-	 * Find a product by its ID
-	 * 
-	 * @param id The ID of the product to search for
-	 * @return Optional containing the product if found, empty otherwise
-	 */
-	Optional<Product> findById(Long id);
-	
 }
