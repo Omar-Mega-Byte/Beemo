@@ -168,14 +168,34 @@
 			"name": "OrderService",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "Create an order",
 					"id": "43221147-20cf8d48-efe0-4fe1-a74f-9926b4a4cbff",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 1,\r\n  \"productId\": 6,\r\n  \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"orders"
+							]
+						}
 					},
 					"response": []
 				}
