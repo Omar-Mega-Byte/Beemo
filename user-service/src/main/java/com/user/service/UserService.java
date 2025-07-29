@@ -30,6 +30,10 @@ public class UserService {
         return userRepository.findByEmail(email).orElse(null);
     }
 
+    public User findById(Long id) {
+        return userRepository.findById(id).orElse(null);
+    }
+
     public boolean checkPassword(String rawPassword, String encodedPassword) {
         return passwordEncoder.matches(rawPassword, encodedPassword);
     }
