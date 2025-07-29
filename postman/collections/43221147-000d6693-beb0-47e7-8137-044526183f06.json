@@ -316,12 +316,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9001/orders",
-							"protocol": "http",
+							"raw": "{{OrderURL}}/orders",
 							"host": [
-								"localhost"
+								"{{OrderURL}}"
 							],
-							"port": "9001",
 							"path": [
 								"orders"
 							]
@@ -386,6 +384,11 @@
 		{
 			"key": "UserURL",
 			"value": "http://localhost:9005",
+			"type": "default"
+		},
+		{
+			"key": "OrderURL",
+			"value": "http://localhost:9001",
 			"type": "default"
 		}
 	]
