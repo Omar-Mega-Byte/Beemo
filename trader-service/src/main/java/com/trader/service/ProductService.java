@@ -61,4 +61,43 @@ public class ProductService {
 			throw new IllegalArgumentException("Product with ID " + id + " does not exist.");
 		}
 	}
+	public Product updateProduct(Product product) {
+		if (productRepository.existsById(product.getId())) {
+			return productRepository.save(product);
+		} else {
+			throw new IllegalArgumentException("Product with ID " + product.getId() + " does not exist.");
+		}
+	}
+
+	/**
+	 * Update product stock
+	 * 
+	 * @param productId The ID of the product
+	 * @param quantity The quantity to reduce from stock
+	 * @return true if stock update successful, false if insufficient stock
+	 */
+	public boolean updateProductStock(Long productId, int quantity) {
+		Product product = findById(productId);
+		if (product == null) {
+			return false;
+		}
+		if (product.getStock() >= quantity) {
+			product.setStock(product.getStock() - quantity);
+			productRepository.save(product);
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Check if product has sufficient stock
+	 * 
+	 * @param productId The ID of the product
+	 * @param quantity The requested quantity
+	 * @return true if sufficient stock available
+	 */
+	public boolean hasInStock(Long productId, int quantity) {
+		Product product = findById(productId);
+		return product != null && product.getStock() >= quantity;
+	}
 }
