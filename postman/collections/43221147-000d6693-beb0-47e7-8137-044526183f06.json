@@ -122,13 +122,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{TraderURL}}/products/5",
+							"raw": "{{TraderURL}}/products/6",
 							"host": [
 								"{{TraderURL}}"
 							],
 							"path": [
 								"products",
-								"5"
+								"6"
 							]
 						}
 					},
@@ -170,23 +170,27 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\r\n    \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
-							"raw": "{{TraderURL}}/products/6/stock",
+							"raw": "{{TraderURL}}/products/1/stock?quantity=1",
 							"host": [
 								"{{TraderURL}}"
 							],
 							"path": [
 								"products",
-								"6",
+								"1",
 								"stock"
 							],
 							"query": [
 								{
-									"key": "company",
-									"value": "Giza",
-									"disabled": true
+									"key": "quantity",
+									"value": "1"
 								}
 							]
 						}
@@ -277,7 +281,19 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9005/1/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9005",
+							"path": [
+								"1",
+								"validate"
+							]
+						}
 					},
 					"response": []
 				}
