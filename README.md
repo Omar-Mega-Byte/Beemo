@@ -1,6 +1,4 @@
-Here's the filtered `README.md` content in Markdown format, ready to copy and paste:
 
-```markdown
 # 🐝 Beemo — E-commerce Microservices System
 
 Beemo is a modular e-commerce application built using **Spring Boot**, following a microservices architecture. It includes core services for users, orders, traders, products, and payments, orchestrated through **Eureka Discovery** and exposed via an **API Gateway**.
@@ -116,11 +114,9 @@ Common `.gitignore` entries:
 
 **Beemo** was created as a sample e-commerce platform with learning in mind—focused on testing, scalability, and modularity in Spring Boot microservices.
 
----
 
 ## 📎 License
 
 This project is licensed under the MIT License.
 ```
 
-Let me know if you need help generating a GitHub repo or adding a Swagger UI view for this setup!
