@@ -225,12 +225,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9005/register",
-							"protocol": "http",
+							"raw": "{{UserURL}}/register",
 							"host": [
-								"localhost"
+								"{{UserURL}}"
 							],
-							"port": "9005",
 							"path": [
 								"register"
 							]
@@ -386,6 +384,13 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "UserURL",
+			"value": "http://localhost:9005",
+			"type": "default"
 		}
 	]
 }
