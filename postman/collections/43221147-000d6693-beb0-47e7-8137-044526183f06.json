@@ -155,6 +155,18 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "43221147-f05f934c-fa8b-431e-980e-fbeeb3e14ba2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "43221147-fca36522-fddf-4058-9238-835306a2a172"
@@ -233,7 +245,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Validate a user",
 					"id": "43221147-a2a70bc9-4c33-4815-a670-b27d65b72b3d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
