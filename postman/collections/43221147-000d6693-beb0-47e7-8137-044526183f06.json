@@ -459,8 +459,30 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"orderId\": 2,\r\n  \"userId\": 1,\r\n  \"amount\": 99.99,\r\n  \"currency\": \"USD\",\r\n  \"paymentMethod\": \"PAYPAL\",\r\n  \"paypalEmail\": \"user@example.com\",\r\n  \"description\": \"Order payment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9004/payments/103/refund",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9004",
+							"path": [
+								"payments",
+								"103",
+								"refund"
+							]
+						}
 					},
 					"response": []
 				}
