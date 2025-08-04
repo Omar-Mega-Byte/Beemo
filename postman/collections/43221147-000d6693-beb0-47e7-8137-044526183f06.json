@@ -354,8 +354,21 @@
 			"id": "43221147-15db1e4c-e7c0-417e-bd6f-0736fc20a72d"
 		},
 		{
-			"name": "New Folder",
-			"item": [],
+			"name": "PaymentService",
+			"item": [
+				{
+					"name": "New Request",
+					"id": "43221147-b62f9d7f-35f3-4cd7-a6c3-5b19c26117c3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "43221147-fefa6eaa-921f-49e7-95f2-bf71d6c5ebd4"
 		}
 	],
