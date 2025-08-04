@@ -308,7 +308,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"userId\": 1,\r\n  \"productId\": 6,\r\n  \"quantity\": 2\r\n}",
+							"raw": "{\r\n  \"userId\": 1,\r\n  \"productId\": 9,\r\n  \"quantity\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -316,9 +316,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{OrderURL}}/orders",
+							"raw": "{{GatewayURL}}/orders",
 							"host": [
-								"{{OrderURL}}"
+								"{{GatewayURL}}"
 							],
 							"path": [
 								"orders"
@@ -337,9 +337,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{OrderURL}}/orders/user/1",
+							"raw": "{{GatewayURL}}/orders/user/1",
 							"host": [
-								"{{OrderURL}}"
+								"{{GatewayURL}}"
 							],
 							"path": [
 								"orders",
@@ -349,16 +349,152 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get the status of an order",
+					"id": "43221147-be595881-9f92-4522-bfbb-231778532880",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/orders/1/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"orders",
+								"1",
+								"status"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "43221147-15db1e4c-e7c0-417e-bd6f-0736fc20a72d"
+		},
+		{
+			"name": "PaymentService",
+			"item": [
+				{
+					"name": "Do a payment",
+					"id": "43221147-b62f9d7f-35f3-4cd7-a6c3-5b19c26117c3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"orderId\": 2,\r\n  \"userId\": 1,\r\n  \"amount\": 99.99,\r\n  \"currency\": \"USD\",\r\n  \"paymentMethod\": \"PAYPAL\",\r\n  \"paypalEmail\": \"user@example.com\",\r\n  \"description\": \"Order payment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9004/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9004",
+							"path": [
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Do a refund",
+					"id": "43221147-ca131dcd-4440-4c6e-8adf-4f67b5ce5724",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"orderId\": 2,\r\n  \"userId\": 1,\r\n  \"amount\": 99.99,\r\n  \"currency\": \"USD\",\r\n  \"paymentMethod\": \"PAYPAL\",\r\n  \"paypalEmail\": \"user@example.com\",\r\n  \"description\": \"Order payment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9004/payments/103/refund",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9004",
+							"path": [
+								"payments",
+								"103",
+								"refund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Payment Health",
+					"id": "43221147-0248b291-95ee-4c8f-84d9-d8a7a9830aab",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9004/payments/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9004",
+							"path": [
+								"payments",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check order Status",
+					"id": "43221147-8ae0e239-7876-4b89-9cf1-5805bfa7b8a4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "43221147-fefa6eaa-921f-49e7-95f2-bf71d6c5ebd4"
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9c94ab53-d72f-44e1-81f8-f1b02302930a",
+				"id": "ea9be6b9-67e5-4ffc-86e9-6e6180c769aa",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -369,7 +505,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e963db0a-0b02-4023-ae6f-794ef1023c6b",
+				"id": "9e92fc17-c3b0-4fa8-a7b0-07c536a83c98",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -385,7 +521,7 @@
 			"type": "default"
 		},
 		{
-			"key": "OrderURL",
+			"key": "GatewayURL",
 			"value": "http://localhost:9001",
 			"type": "default"
 		}
