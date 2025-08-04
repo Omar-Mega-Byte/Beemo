@@ -27,5 +27,5 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 server:
-  port: 9003
+  port: 9004
 
