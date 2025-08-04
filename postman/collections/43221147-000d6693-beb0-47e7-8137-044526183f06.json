@@ -385,14 +385,34 @@
 			"name": "PaymentService",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "Do a payment",
 					"id": "43221147-b62f9d7f-35f3-4cd7-a6c3-5b19c26117c3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"orderId\": 1,\r\n  \"userId\": 1,\r\n  \"amount\": 99.99,\r\n  \"currency\": \"USD\",\r\n  \"paymentMethod\": \"CREDIT_CARD\",\r\n  \"cardNumber\": \"4111111111111111\",\r\n  \"cardholderName\": \"John Doe\",\r\n  \"expiryMonth\": \"12\",\r\n  \"expiryYear\": \"2025\",\r\n  \"cvv\": \"123\",\r\n  \"description\": \"Order payment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9004/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9004",
+							"path": [
+								"payments"
+							]
+						}
 					},
 					"response": []
 				}
