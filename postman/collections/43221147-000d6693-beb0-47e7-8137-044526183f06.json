@@ -316,9 +316,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{OrderURL}}/orders",
+							"raw": "{{GatewayURL}}/orders",
 							"host": [
-								"{{OrderURL}}"
+								"{{GatewayURL}}"
 							],
 							"path": [
 								"orders"
