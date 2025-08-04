@@ -441,7 +441,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Check Payment Status",
 					"id": "43221147-8ae0e239-7876-4b89-9cf1-5805bfa7b8a4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
