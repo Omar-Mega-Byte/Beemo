@@ -349,6 +349,34 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get the status of an order",
+					"id": "43221147-be595881-9f92-4522-bfbb-231778532880",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/orders/1/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"orders",
+								"1",
+								"status"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "43221147-15db1e4c-e7c0-417e-bd6f-0736fc20a72d"
