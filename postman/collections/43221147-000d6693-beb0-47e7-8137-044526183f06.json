@@ -453,7 +453,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Do a refund",
 					"id": "43221147-ca131dcd-4440-4c6e-8adf-4f67b5ce5724",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
