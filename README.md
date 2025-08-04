@@ -13,7 +13,6 @@ Beemo is a modular e-commerce application built using **Spring Boot**, following
 | `eureka-server`    | Service registry using Netflix Eureka              |
 | `user-service`     | Handles registration, login, and user validation   |
 | `trader-service`   | Manages traders and product-related actions        |
-| `product-service`  | Product stock management (if split from trader)    |
 | `order-service`    | Manages customer orders                            |
 | `payment-service`  | Handles payment logic                              |
 | `common-models`    | Shared DTOs/entities across services               |
@@ -50,29 +49,6 @@ Make sure you have Java 17+ and Maven installed.
 
 ---
 
-## 📖 OpenAPI Summary
-
-The API is designed around 3 main services:
-
-### 🧑 User Service
-* `POST /register`: Register a new user
-* `POST /login`: Login a user
-* `GET /1/validate`: Validate user existence
-
-### 🛍️ Trader Service
-* `GET /products`: List all products
-* `POST /products`: Add a new product
-* `GET /products/{id}`: Get a specific product
-* `PUT /products/{id}`: Update a product
-* `DELETE /products/{id}`: Delete a product
-* `GET /products/{id}/stock?quantity=x`: Check stock availability
-
-### 📦 Order Service
-* `POST /orders`: Place an order
-* `GET /orders/user/{id}`: Get all orders by user
-
----
-
 ## 🔐 Security
 
 A mock `noauth` HTTP scheme is defined in OpenAPI. You can implement full JWT authentication later.
@@ -102,10 +78,7 @@ Common `.gitignore` entries:
 
 ## 🧪 Future Enhancements
 
-* ✅ JWT authentication
-* ✅ Role-based authorization
 * ✅ Inventory management
-* ✅ Payment integrations
 * ✅ Kafka or RabbitMQ for event-driven orders
 
 ---
