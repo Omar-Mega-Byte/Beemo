@@ -308,7 +308,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"userId\": 1,\r\n  \"productId\": 6,\r\n  \"quantity\": 2\r\n}",
+							"raw": "{\r\n  \"userId\": 1,\r\n  \"productId\": 9,\r\n  \"quantity\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -395,7 +395,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"orderId\": 1,\r\n  \"userId\": 1,\r\n  \"amount\": 99.99,\r\n  \"currency\": \"USD\",\r\n  \"paymentMethod\": \"CREDIT_CARD\",\r\n  \"cardNumber\": \"4111111111111111\",\r\n  \"cardholderName\": \"John Doe\",\r\n  \"expiryMonth\": \"12\",\r\n  \"expiryYear\": \"2025\",\r\n  \"cvv\": \"123\",\r\n  \"description\": \"Order payment\"\r\n}",
+							"raw": "{\r\n  \"orderId\": 2,\r\n  \"userId\": 1,\r\n  \"amount\": 99.99,\r\n  \"currency\": \"USD\",\r\n  \"paymentMethod\": \"PAYPAL\",\r\n  \"paypalEmail\": \"user@example.com\",\r\n  \"description\": \"Order payment\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
