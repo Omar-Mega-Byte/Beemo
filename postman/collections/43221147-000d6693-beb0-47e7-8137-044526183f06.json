@@ -337,9 +337,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{OrderURL}}/orders/user/1",
+							"raw": "{{GatewayURL}}/orders/user/1",
 							"host": [
-								"{{OrderURL}}"
+								"{{GatewayURL}}"
 							],
 							"path": [
 								"orders",
