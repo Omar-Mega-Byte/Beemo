@@ -8,7 +8,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "editor.fontFamily": "Fira Code, JetBrains Mono, Cascadia Code, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
-  "workbench.iconTheme": "vira-icons-palenight",
+  "workbench.iconTheme": "vscode-icons",
   "editor.cursorStyle": "block",
   "editor.tabSize": 4,
   "editor.detectIndentation": true,
