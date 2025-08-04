@@ -358,7 +358,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9c94ab53-d72f-44e1-81f8-f1b02302930a",
+				"id": "ea9be6b9-67e5-4ffc-86e9-6e6180c769aa",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -369,7 +369,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e963db0a-0b02-4023-ae6f-794ef1023c6b",
+				"id": "9e92fc17-c3b0-4fa8-a7b0-07c536a83c98",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -385,7 +385,7 @@
 			"type": "default"
 		},
 		{
-			"key": "OrderURL",
+			"key": "GatewayURL",
 			"value": "http://localhost:9001",
 			"type": "default"
 		}
