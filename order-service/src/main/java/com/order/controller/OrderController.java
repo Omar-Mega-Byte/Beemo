@@ -1,6 +1,7 @@
 package com.order.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.order.dto.OrderRequest;
@@ -71,5 +73,46 @@ public class OrderController {
     public ResponseEntity<Order> cancelOrder(@PathVariable Long orderId) {
         Order cancelledOrder = orderService.cancelOrder(orderId);
         return ResponseEntity.ok(cancelledOrder);
+    }
+    
+    /**
+     * Get order status by ID
+     */
+    @GetMapping("/{orderId}/status")
+    public ResponseEntity<Map<String, Object>> getOrderStatus(@PathVariable Long orderId) {
+        try {
+            Order order = orderService.getOrderById(orderId);
+            if (order == null) {
+                return ResponseEntity.ok(Map.of(
+                    "orderId", orderId,
+                    "status", "NOT_FOUND"
+                ));
+            }
+            
+            return ResponseEntity.ok(Map.of(
+                "orderId", orderId,
+                "status", order.getStatus(),
+                "userId", order.getUserId(),
+                "productId", order.getProductId(),
+                "quantity", order.getQuantity(),
+                "totalPrice", order.getTotalPrice(),
+                "orderDate", order.getOrderDate().toString()
+            ));
+        } catch (Exception e) {
+            return ResponseEntity.ok(Map.of(
+                "orderId", orderId,
+                "status", "ERROR",
+                "message", e.getMessage()
+            ));
+        }
+    }
+    
+    /**
+     * Update order status
+     */
+    @PutMapping("/{orderId}/status")
+    public ResponseEntity<Order> updateOrderStatus(@PathVariable Long orderId, @RequestParam String status) {
+        Order updatedOrder = orderService.updateOrderStatus(orderId, status);
+        return ResponseEntity.ok(updatedOrder);
     }
 }

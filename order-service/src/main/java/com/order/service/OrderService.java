@@ -24,8 +24,8 @@ public class OrderService {
     private final TraderServiceClient traderServiceClient;
     
     public OrderService(OrderRepository orderRepository, 
-                       UserServiceClient userServiceClient, 
-                       TraderServiceClient traderServiceClient) {
+                        UserServiceClient userServiceClient, 
+                        TraderServiceClient traderServiceClient) {
         this.orderRepository = orderRepository;
         this.userServiceClient = userServiceClient;
         this.traderServiceClient = traderServiceClient;
@@ -134,5 +134,36 @@ public class OrderService {
         
         order.setStatus("CANCELLED");
         return orderRepository.save(order);
+    }
+    
+    /**
+     * Update order status
+     * 
+     * @param orderId The ID of the order
+     * @param status The new status to set
+     * @return The updated order
+     */
+    public Order updateOrderStatus(Long orderId, String status) {
+        Order order = getOrderById(orderId);
+        if (order == null) {
+            throw new RuntimeException("Order with ID " + orderId + " not found");
+        }
+        
+        order.setStatus(status);
+        return orderRepository.save(order);
+    }
+    
+    /**
+     * Get order status by ID
+     * 
+     * @param orderId The ID of the order
+     * @return The order status
+     */
+    public String getOrderStatus(Long orderId) {
+        Order order = getOrderById(orderId);
+        if (order == null) {
+            throw new RuntimeException("Order with ID " + orderId + " not found");
+        }
+        return order.getStatus();
     }
 }
