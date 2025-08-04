@@ -403,12 +403,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9004/payments",
-							"protocol": "http",
+							"raw": "{{PaymentUrl}}/payments",
 							"host": [
-								"localhost"
+								"{{PaymentUrl}}"
 							],
-							"port": "9004",
 							"path": [
 								"payments"
 							]
@@ -523,6 +521,11 @@
 		{
 			"key": "GatewayURL",
 			"value": "http://localhost:9001",
+			"type": "default"
+		},
+		{
+			"key": "PaymentUrl",
+			"value": "http://localhost:9004",
 			"type": "default"
 		}
 	]
